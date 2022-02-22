@@ -1,6 +1,8 @@
 package square
 
-import "math"
+import (
+	"math"
+)
 
 // Define custom int type to hold sides number and update CalcSquare signature by replacing #yourTypeNameHere#
 
@@ -10,7 +12,7 @@ import "math"
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-type SidesType int
+type SidesType float64
 
 const (
 	SidesCircle   = 0
@@ -24,7 +26,7 @@ func CalcSquare(sideLen float64, sidesNum SidesType) float64 {
 	case SidesCircle:
 		return sideValuePow * math.Pi
 	case SidesTriangle:
-		return sideValuePow * (1 / 2) * math.Sin(60*math.Pi/180)
+		return sideValuePow * 1 / 2 * math.Sin(60*math.Pi/180)
 	case SidesSquare:
 		return sideValuePow
 	default:
